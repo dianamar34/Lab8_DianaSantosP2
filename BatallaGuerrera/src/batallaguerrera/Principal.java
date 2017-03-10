@@ -18,7 +18,7 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
-        
+
     }
 
     /**
@@ -312,6 +312,11 @@ public class Principal extends javax.swing.JFrame {
         });
 
         jButton6.setText("Crear");
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton6MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -415,6 +420,11 @@ public class Principal extends javax.swing.JFrame {
         });
 
         jButton5.setText("Crear");
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -520,6 +530,11 @@ public class Principal extends javax.swing.JFrame {
         });
 
         jButton4.setText("Crear");
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
@@ -625,6 +640,11 @@ public class Principal extends javax.swing.JFrame {
         });
 
         jButton3.setText("Crear");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
@@ -802,16 +822,92 @@ public class Principal extends javax.swing.JFrame {
     private void crearalumMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearalumMouseClicked
         // Guardar alumno
         Alumnos p = new Alumnos(Integer.parseInt(tf_cuenta.getText()), tf_carrera.getText(), Integer.parseInt(tf_edad.getText()), tf_nombre.getText(), tf_nickn.getText(), tf_pataque.getText(), tf_pdefensa.getText(), tf_salud.getText(), Integer.parseInt(tf_puntos.getText()));
-        
-        adminGerreros ap = new adminGuerreros("./guerreros.txt");
+
+        adminGuerreros ap = new adminGuerreros("./Guerreros.txt");
         ap.cargarArchivo();
-        ap.setAlumno(p);
+        ap.setNombre(tf_nombre.getText());
         ap.escribirArchivo();
         //Crear propia extension
-        JOptionPane.showMessageDialog(this, "Alumno guardado exitosamente");
+        JOptionPane.showMessageDialog(this, "Guerrero guardado exitosamente");
         tf_nombre.setText("");
         tf_edad.setText("");
+        tf_nickn.setText("");
+        tf_cuenta.setText("");
+        tf_carrera.setText("");
+        tf_salud.setText("");
+        tf_pdefensa.setText("");
+        tf_pataque.setText("");
+        tf_puntos.setText("");
     }//GEN-LAST:event_crearalumMouseClicked
+
+    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
+        // Guardar dragon
+        Dragon p1 = new Dragon(tf_nombre1.getText(), tf_nickn1.getText(), tf_pataque1.getText(), tf_pdefensa1.getText(), tf_salud1.getText(), Integer.parseInt(tf_puntos1.getText()));
+
+        adminGuerreros ap = new adminGuerreros("./Guerreros.txt");
+        ap.cargarArchivo();
+        ap.setNombre(tf_nombre1.getText());
+        ap.escribirArchivo();
+        //Crear propia extension
+        JOptionPane.showMessageDialog(this, "Guerrero guardado exitosamente");
+        tf_nombre1.setText("");
+        tf_nickn1.setText("");
+        tf_salud1.setText("");
+        tf_pdefensa1.setText("");
+        tf_pataque1.setText("");
+        tf_puntos1.setText("");
+    }//GEN-LAST:event_jButton6MouseClicked
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        Fenix p2 = new Fenix(tf_nombre2.getText(), tf_nickn2.getText(), tf_pataque2.getText(), tf_pdefensa2.getText(), tf_salud2.getText(), Integer.parseInt(tf_puntos2.getText()));
+
+        adminGuerreros ap = new adminGuerreros("./Guerreros.txt");
+        ap.cargarArchivo();
+        ap.setNombre(tf_nombre2.getText());
+        ap.escribirArchivo();
+        //Crear propia extension
+        JOptionPane.showMessageDialog(this, "Guerrero guardado exitosamente");
+        tf_nombre2.setText("");
+        tf_nickn2.setText("");
+        tf_salud2.setText("");
+        tf_pdefensa2.setText("");
+        tf_pataque2.setText("");
+        tf_puntos2.setText("");
+    }//GEN-LAST:event_jButton5MouseClicked
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+       HombreLobo p3 = new HombreLobo(tf_nombre3.getText(), tf_nickn3.getText(), tf_pataque3.getText(), tf_pdefensa3.getText(), tf_salud3.getText(), Integer.parseInt(tf_puntos3.getText()));
+
+        adminGuerreros ap = new adminGuerreros("./Guerreros.txt");
+        ap.cargarArchivo();
+        ap.setNombre(tf_nombre3.getText());
+        ap.escribirArchivo();
+        //Crear propia extension
+        JOptionPane.showMessageDialog(this, "Guerrero guardado exitosamente");
+        tf_nombre3.setText("");
+        tf_nickn3.setText("");
+        tf_salud3.setText("");
+        tf_pdefensa3.setText("");
+        tf_pataque3.setText("");
+        tf_puntos3.setText("");
+    }//GEN-LAST:event_jButton4MouseClicked
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+       Minotauro p4 = new Minotauro(tf_nombre4.getText(), tf_nickn4.getText(), tf_pataque4.getText(), tf_pdefensa4.getText(), tf_salud4.getText(), Integer.parseInt(tf_puntos4.getText()));
+
+        adminGuerreros ap = new adminGuerreros("./Guerreros.txt");
+        ap.cargarArchivo();
+        ap.setNombre(tf_nombre4.getText());
+        ap.escribirArchivo();
+        //Crear propia extension
+        JOptionPane.showMessageDialog(this, "Guerrero guardado exitosamente");
+        tf_nombre1.setText("");
+        tf_nickn1.setText("");
+        tf_salud1.setText("");
+        tf_pdefensa1.setText("");
+        tf_pataque1.setText("");
+        tf_puntos1.setText("");
+    }//GEN-LAST:event_jButton3MouseClicked
 
     /**
      * @param args the command line arguments
