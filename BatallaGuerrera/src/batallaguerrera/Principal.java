@@ -33,6 +33,12 @@ public class Principal extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        escoger = new javax.swing.JDialog();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        tabla6 = new javax.swing.JTable();
+        jButton11 = new javax.swing.JButton();
+        iniciar = new javax.swing.JDialog();
+        jLabel35 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
@@ -155,13 +161,86 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel1.setText("jLabel1");
 
+        escoger.setBackground(new java.awt.Color(0, 204, 204));
+
+        tabla6.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "P. Ataque", "P. Defensa", "Puntaje"
+            }
+        ));
+        jScrollPane6.setViewportView(tabla6);
+
+        jButton11.setText("Escoger");
+        jButton11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton11MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout escogerLayout = new javax.swing.GroupLayout(escoger.getContentPane());
+        escoger.getContentPane().setLayout(escogerLayout);
+        escogerLayout.setHorizontalGroup(
+            escogerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(escogerLayout.createSequentialGroup()
+                .addContainerGap(126, Short.MAX_VALUE)
+                .addGroup(escogerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, escogerLayout.createSequentialGroup()
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(124, 124, 124))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, escogerLayout.createSequentialGroup()
+                        .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(251, 251, 251))))
+        );
+        escogerLayout.setVerticalGroup(
+            escogerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(escogerLayout.createSequentialGroup()
+                .addGap(97, 97, 97)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+                .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46))
+        );
+
+        jLabel35.setFont(new java.awt.Font("Tahoma", 2, 48)); // NOI18N
+        jLabel35.setText("Pelea");
+
+        javax.swing.GroupLayout iniciarLayout = new javax.swing.GroupLayout(iniciar.getContentPane());
+        iniciar.getContentPane().setLayout(iniciarLayout);
+        iniciarLayout.setHorizontalGroup(
+            iniciarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(iniciarLayout.createSequentialGroup()
+                .addGap(231, 231, 231)
+                .addComponent(jLabel35)
+                .addContainerGap(321, Short.MAX_VALUE))
+        );
+        iniciarLayout.setVerticalGroup(
+            iniciarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(iniciarLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(jLabel35)
+                .addContainerGap(487, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel2.setBackground(new java.awt.Color(0, 204, 204));
 
         jButton1.setText("Iniciar Batalla");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
 
         jButton2.setText("Escoger Guerreros");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
 
         warrior.setIcon(new javax.swing.ImageIcon("C:\\Users\\Diana Santos\\Desktop\\UNITEC\\warr.jpg")); // NOI18N
         warrior.setText("jLabel3");
@@ -1161,7 +1240,7 @@ public class Principal extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
-        jTabbedPane1.addTab("Eliminar", jPanel14);
+        jTabbedPane1.addTab("Eliminar y Listar", jPanel14);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -1236,7 +1315,7 @@ public class Principal extends javax.swing.JFrame {
 
         
         DefaultTableModel model = (DefaultTableModel) tabla1.getModel();
-        Object[] newRow = {(tf_nombre.getText()), tf_pataque.getText(), tf_pdefensa.getText(), tf_salud.getText()};
+        Object[] newRow = {(tf_nombre.getText()), tf_pataque.getText(), tf_pdefensa.getText(), tf_puntos.getText()};
         model.addRow(newRow);
         tabla1.setModel(model);
 
@@ -1265,7 +1344,7 @@ public class Principal extends javax.swing.JFrame {
         ap.escribirArchivo();
         
         DefaultTableModel model = (DefaultTableModel) tabla2.getModel();
-        Object[] newRow = {(tf_nombre1.getText()), tf_pataque1.getText(), tf_pdefensa1.getText(), tf_salud1.getText()};
+        Object[] newRow = {(tf_nombre1.getText()), tf_pataque1.getText(), tf_pdefensa1.getText(), tf_puntos1.getText()};
         model.addRow(newRow);
         tabla2.setModel(model);
         guerrero.add(p1);
@@ -1288,7 +1367,7 @@ public class Principal extends javax.swing.JFrame {
         ap.escribirArchivo();
         
         DefaultTableModel model = (DefaultTableModel) tabla3.getModel();
-        Object[] newRow = {(tf_nombre2.getText()), tf_pataque2.getText(), tf_pdefensa2.getText(), tf_salud2.getText()};
+        Object[] newRow = {(tf_nombre2.getText()), tf_pataque2.getText(), tf_pdefensa2.getText(), tf_puntos2.getText()};
         model.addRow(newRow);
         tabla3.setModel(model);
         guerrero.add(p2);
@@ -1312,7 +1391,7 @@ public class Principal extends javax.swing.JFrame {
         ap.escribirArchivo();
         
         DefaultTableModel model = (DefaultTableModel) tabla4.getModel();
-        Object[] newRow = {(tf_nombre3.getText()), tf_pataque3.getText(), tf_pdefensa3.getText(), tf_salud3.getText()};
+        Object[] newRow = {(tf_nombre3.getText()), tf_pataque3.getText(), tf_pdefensa3.getText(), tf_puntos3.getText()};
         model.addRow(newRow);
         tabla4.setModel(model);
         guerrero.add(p3);
@@ -1395,6 +1474,31 @@ public class Principal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton10MouseClicked
 
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        escoger.setModal(true);
+        escoger.pack();
+        escoger.setLocationRelativeTo(this);
+        escoger.setVisible(true);
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jButton11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton11MouseClicked
+        if (tabla6.getSelectedRow() >= 0) {
+            DefaultTableModel model = (DefaultTableModel) tabla6.getModel();
+            model.removeRow(tabla6.getSelectedRow());
+            tabla6.setModel(model);
+            
+            JOptionPane.showMessageDialog(this, "Se escogio un buen guerrero");
+        }
+        //escogidos.add(model);
+    }//GEN-LAST:event_jButton11MouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        iniciar.setModal(true);
+        iniciar.pack();
+        iniciar.setLocationRelativeTo(this);
+        iniciar.setVisible(true);
+    }//GEN-LAST:event_jButton1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1433,8 +1537,11 @@ public class Principal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton crearalum;
     private javax.swing.JButton eliminar;
+    private javax.swing.JDialog escoger;
+    private javax.swing.JDialog iniciar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -1471,6 +1578,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1507,6 +1615,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
@@ -1517,6 +1626,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTable tabla3;
     private javax.swing.JTable tabla4;
     private javax.swing.JTable tabla5;
+    private javax.swing.JTable tabla6;
     private javax.swing.JTextField tf_carrera;
     private javax.swing.JTextField tf_cuenta;
     private javax.swing.JTextField tf_edad;
@@ -1553,4 +1663,5 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel warrior;
     // End of variables declaration//GEN-END:variables
 ArrayList<Guerreros> guerrero = new ArrayList();
+ArrayList<Guerreros> escogidos = new ArrayList();
 }
